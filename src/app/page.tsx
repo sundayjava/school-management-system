@@ -8,6 +8,7 @@ import { Journey } from "@/components/sections/journey";
 import { AcademicCalendar } from "@/components/sections/academic-calendar";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Announcements } from "@/components/sections/announcements";
+import { SecureFuture } from "@/components/sections/secure-future";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <AcademicCalendar />
       <Testimonials />
       <Announcements />
+      <SecureFuture />
     </main>
   );
 }
