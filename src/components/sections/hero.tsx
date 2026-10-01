@@ -1,15 +1,41 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  HeroSlideshow,
+  type HeroSlide,
+} from "@/components/sections/hero-slideshow";
 
 const stats = [
   { value: "15+", label: "Years of excellence" },
   { value: "3,000+", label: "Students enrolled" },
   { value: "98%", label: "On-time result release" },
+];
+
+/*
+  TODO: swap for the school's own campus/student photos once supplied —
+  these are Unsplash stock photography as realistic placeholders.
+*/
+const slides: HeroSlide[] = [
+  {
+    src: "/images/hero-students.jpg",
+    alt: "Students in class at Greenfield Secondary School",
+  },
+  {
+    src: "/images/hero-graduation.jpg",
+    alt: "Graduating students throwing their caps in the air",
+  },
+  {
+    src: "/images/hero-campus.jpg",
+    alt: "The Greenfield Secondary School campus building",
+  },
+  {
+    src: "/images/hero-classroom.jpg",
+    alt: "A teacher leading a lesson in a Greenfield classroom",
+  },
 ];
 
 export function Hero() {
@@ -20,21 +46,13 @@ export function Hero() {
   return (
     <section className="pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pb-24">
       <Container>
-        {/*
-          TODO: swap for the school's own campus/student photo once
-          supplied — this is Unsplash stock photography as a realistic
-          placeholder.
-        */}
         <div className="relative isolate flex min-h-120 flex-col justify-center overflow-hidden rounded-[2.5rem] p-8 sm:aspect-video sm:p-12 lg:p-16">
-          <Image
-            src="/images/hero-students.jpg"
-            alt="Students at Greenfield Secondary School"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/35 to-black/10" />
+          <HeroSlideshow slides={slides} />
+
+          {/* Two scrims: bottom-up for depth, left-to-right to keep the
+              headline legible over the brighter slides. */}
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent" />
 
           <div className="relative">
             <p className="text-xs font-semibold tracking-wide text-white uppercase sm:text-sm sm:tracking-widest">
