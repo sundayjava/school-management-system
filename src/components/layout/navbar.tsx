@@ -25,7 +25,9 @@ export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-50 py-4 sm:py-6">
       <Container>
-        <div className="dark:bg-ink-900/90 flex h-16 items-center justify-between rounded-full bg-white/95 px-5 shadow-lg shadow-black/5 backdrop-blur sm:px-6">
+        {/* Narrower than the hero card below it, so the photo's top edge
+            reads as cutting the bar in half (see Hero's top padding). */}
+        <div className="dark:bg-ink-900/90 mx-auto flex h-16 max-w-5xl items-center justify-between rounded-full bg-white/95 px-5 shadow-lg shadow-black/5 backdrop-blur sm:px-6">
           <Link
             href="/"
             className="text-ink-950 flex items-center gap-2 text-base font-bold tracking-tight dark:text-white"
@@ -79,7 +81,7 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className="bg-surface border-border mt-2 rounded-3xl border p-4 shadow-lg lg:hidden">
+          <div className="bg-surface border-border mx-auto mt-2 max-w-5xl rounded-3xl border p-4 shadow-lg lg:hidden">
             <div className="flex flex-col gap-1">
               {siteConfig.nav.map((item) => (
                 <Link
