@@ -5,6 +5,8 @@ import { WhyLearn } from "@/components/sections/why-learn";
 import { QuickLinks } from "@/components/sections/quick-links";
 import { RibbonStrip } from "@/components/sections/ribbon-strip";
 import { Journey } from "@/components/sections/journey";
+import { AcademicCalendar } from "@/components/sections/academic-calendar";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Announcements } from "@/components/sections/announcements";
 
 export default function Home() {
@@ -17,6 +19,8 @@ export default function Home() {
       <QuickLinks />
       <RibbonStrip />
       <Journey />
+      <AcademicCalendar />
+      <Testimonials />
       <Announcements />
     </main>
   );

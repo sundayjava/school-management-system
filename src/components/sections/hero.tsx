@@ -46,7 +46,10 @@ export function Hero() {
   return (
     <section className="pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pb-24">
       <Container>
-        <div className="relative isolate flex min-h-120 flex-col justify-center overflow-hidden rounded-[2.5rem] p-8 sm:aspect-video sm:p-12 lg:p-16">
+        {/* w-full is load-bearing: with aspect-video and min-h both set and
+            no explicit width, the browser derives width from the min-height
+            (480 * 16/9 = 853px) and overflows the container at tablet sizes. */}
+        <div className="relative isolate flex min-h-120 w-full flex-col justify-center overflow-hidden rounded-[2.5rem] p-8 sm:aspect-video sm:p-12 lg:p-16">
           <HeroSlideshow slides={slides} />
 
           {/* Two scrims: bottom-up for depth, left-to-right to keep the
