@@ -8,7 +8,7 @@ type PageHeaderProps = {
 
 export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   return (
-    <section className="border-border bg-surface-muted border-b py-16 sm:py-20">
+    <section className="border-border bg-surface-muted border-b pt-32 pb-16 sm:pt-40 sm:pb-20">
       <Container>
         {eyebrow && (
           <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold tracking-wide uppercase">
