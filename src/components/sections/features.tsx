@@ -24,9 +24,9 @@ const features = [
   },
 ];
 
-export function About() {
+export function Features() {
   return (
-    <Section id="about" className="scroll-mt-24">
+    <Section>
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
